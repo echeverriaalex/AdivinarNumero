@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link href="style.css" rel="stylesheet">
+        <title>Document</title>
+    </head>
+    <body>
+        <header>
+                <h1>Welcome / Bienvenid@ </h1>
+        </header>
+
+        <main>        
+           
+            <section>
+                <h2> Y ahora vamos a jugar ... Adivina el numero secreto </h2>
+                <h3> Haz click al numero que creeas que es el secreto, veremos si aciertas ...</h3>
+                
+                <button class="number" id="number"> 1 </button>
+                <button class="number" id="number"> 2 </button>
+                <button class="number" id="number"> 3 </button>
+                <button class="number" id="number"> 4 </button>
+                <button class="number" id="number"> 5 </button>
+                <button class="number" id="number"> 6 </button>
+                <button class="number" id="number"> 7 </button>
+                <button class="number" id="number"> 8 </button>
+                <button class="number" id="number"> 9 </button>
+                <button class="number" id="number"> 10 </button>
+            </section>
+            
+            <div id="resultado"> </div>
+            
+            <script>
+
+                function getRandom(max){
+                    return Math.round(Math.random()*max);
+                }
+
+                var phraseOfLost = [
+                    "Me voy al baño mientras que juegas",
+                    "JAJAJAJ no puedes ganar a este juego",
+                    "Quieres un cafe?",
+                    "🎵 Welcome to the jungle Watch it bring you to your sha-n-n-n-n-n knees, knees🎵 ... te falta mucho?",  
+                    "Mientras que intentas adivinar me preparo una bebida",
+                    "🎵Por eso esperaba con la carita empapada a que llegaras con rosas, con mil rosas para mí🎵 ... y que onda sale o no ?",
+                    "Y que tal si te rindes? na ganaras nunca jajajaj",
+                    "Me estoy aburriendo contigo",
+                    "🎵Oh, kiss me, beneath the milky twilight 🎵 ... vamos tu puedes",
+                    "Me voy a preprar un cafe, tu sigue intentando ...",
+                    "Nunca conoci a alguien tan insistente como tu !!",
+                    "Ya es navidad? dale adivina que me duermo !!!",
+                    "🎵 Y ese cuerpito que tú tiene', el traje 'e baño chiquitito te queda 🎵 ... Come on baby",
+                    "Oh My God, jaja te creiste que ibas a ganar facil?",
+                    "Y como dijo La Oreja de Van Gogh '🎵 Donde los viernes cada tarde, como siempre la esperanza dice quieta, hoy quizás sí 🎵'",
+                    "Pues no mi ciela !!",
+                    "🎵 Como tú te llamas, yo no sé de donde llegaste, ni pregunté 🎵 ... Si adivinas antes del amanecer te regalo 100 dolares ",
+                    "Y mientras tratas de adivinar, cuentame que tal tu dia",
+                    "Por que no buscas ayuda mejor?",
+                    "Frio, frio como el agua del rio ...",
+                    "Y como dijo Miley Cyrus '🎵🎵 I can buy myself flowers 🎵🎵', tu sigue adivinando",
+                ]
+                
+                const botonesNumber = document.querySelectorAll('.number');
+
+                botonesNumber.forEach(boton =>{
+                    boton.addEventListener('click', ()=>{
+                        console.log("\n\n\n\n ")
+                        var numero = boton.innerHTML;
+                        
+                        console.log("Tu numero es: " + numero);
+                        
+                        var numeroRandom = 0;
+
+                        while(numeroRandom == 0){                        
+                            numeroRandom = getRandom(10);
+                            if(numeroRandom != 0){
+                                break;
+                            }
+                        }
+                                        
+                        console.log("El numero secreto es: " + numeroRandom);
+
+                        var resultado = document.getElementById('resultado');
+                        
+                        if(numero == numeroRandom){
+                            console.log("Adivinaste el numero");
+                            resultado.innerHTML = "Maldicion, adivinaste el numero, ganaste!";
+                        }
+                        else{
+                            var phrase = phraseOfLost[getRandom(phraseOfLost.length)];
+                            console.log("perdiste");
+                            resultado.innerHTML = phrase + "<br><br>El numero secreto  era " + numeroRandom;
+                        }
+                    });
+                });
+            </script>
+        </main>        
+    </body>
+</html>

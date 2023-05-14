@@ -1,0 +1,71 @@
+*{
+    margin: 0px;
+    padding: 0px;
+}
+
+html, body{    
+    height: 100%;
+}
+
+body{
+    background: url(wallpaper\ book.jpg);
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+
+header{
+    /* background: url(wallpaper\ magic.jpg); */
+    width: auto;
+    height: auto;
+    margin: 10px 10px;
+}
+
+h1{
+    text-align: center;
+    font-size: 40px;
+    margin: auto;
+    background: rgba(0, 0, 0, 0.7);
+    width: 70%;
+    color: white;
+    padding: 10px;
+}
+
+
+
+div{
+    background-color: rgba(8, 83, 145, 0.4);    
+    width: 90%;
+    height: 60%;
+    margin: auto;
+    color: white;
+    font-size: 30px;
+    text-align: center;
+    border-radius: 20px;
+    padding: 10px 20px;
+    margin-top: 30px;
+}
+
+section{
+    padding: 20px;
+    border-radius: 20px;
+    width: 90%;
+    height: auto;
+    margin: auto;
+    color: aliceblue;
+    text-align: center;
+    background: rgba(126, 74, 6, 0.7);
+}
+
+#number{
+    background-color: rgba(14, 138, 255, 0.6);
+    width: auto;
+    padding: 10px 20px;
+    height: 50%;
+    margin: auto;
+    margin-top: 20px;
+    font-size: 30px;
+    text-align: center;
+    color: white;
+    margin-left: auto;
+    margin-right: auto;
+}
